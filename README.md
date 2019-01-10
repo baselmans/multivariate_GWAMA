@@ -60,7 +60,7 @@ To run the Nweighted function some steps are requiered.
 ```   
    Summary of genetic correlation results						
    p1	p2	rg	se	z	p	h2_obs	h2_obs_se	h2_int	h2_int_se	gcov_int	gcov_int_se
-   T1	T2	0.8419	0.3384	2.487	0.01287	0.0691	0.004	1.0058	0.0094	0.0045	0.0048
+   T1	T2	0.8419	0.3384	2.487	0.01287	0.0691	0.004	  1.0058  	0.0094  	0.0045	  0.0048
 
 ```
    The value listed under gcov_int is needed for the Cross Trait Intercept
