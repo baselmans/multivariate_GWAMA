@@ -54,7 +54,7 @@ To run the Nweighted function some steps are requiered.
    These Crostrait intercepts can be found in the log files provided by LD Score Regression (genetic correlation)
    The output is looking like:
 ```   
-   Summary	of	Genetic	Correlation	Results							
+   Summary of genetic correlation results						
    p1	p2	rg	se	z	p	h2_obs	h2_obs_se	h2_int	h2_int_se	gcov_int	gcov_int_se
 ```
    The value listed under gcov_int is needed for the Cross Trait Intercept
