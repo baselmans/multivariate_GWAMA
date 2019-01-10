@@ -7,7 +7,7 @@ Nweighted GWAMA is a R based software function that performs a multivariate GWAM
 # Getting Started
 
 You can source the function via:
-source("https://github.com/baselmans/multivariate_GWAMA/blob/master/Downloads/N_weighted_GWAMA.function.1_2_3.R?raw=TRUE")
+```source("https://github.com/baselmans/multivariate_GWAMA/blob/master/Downloads/N_weighted_GWAMA.function.1_2_3.R?raw=TRUE")```
  
 Or alternatively, you can download the function in the folder Downloads
 
