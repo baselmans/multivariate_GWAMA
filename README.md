@@ -74,13 +74,16 @@ T3	 0.0126	 0.2189	 1	 0.3474
 T4	 0.0236	 0.1605	 0.3474	 1
 ```
 4.  A vector of the SNP heritabilities of the included traits needs to be included
-    For instance: h2list <- c(0.0498, 0.0441, 0.0708, 0.0294)
-
+    For instance: 
+ ```
+    h2list <- c(0.0498, 0.0441, 0.0708, 0.0294)
+ ```   
 * Note, The CTI values and the SNP heritabilies needs to be in the exact same order as you list the GWAS summary statistics.
 
 # Run the Nweighted function
+```  
   multivariate_GWAMA(x=dat,cov_Z=CTI,h2=h2list,out=".",name="your_name",output_gz=F,check_rows=F)
-  
+```  
   The function provides a log file including all the different steps (e.g. aligning) and possible errors. 
 
 
