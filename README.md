@@ -63,7 +63,7 @@ To run the Nweighted function The following files, agruments and data points are
    T1	T2	0.8419	0.3384	2.487	0.01287	0.0691	0.004	        1.0058  0.0094   	0.0045	        0.0048
 
 ```
-   The value listed under gcov_int is nwhat we call the Cross Trait Intercept
+   The value listed under gcov_int is what we call the Cross Trait Intercept in our paper
    
    A CTI matrix could look like:
 ```  	
