@@ -27,7 +27,7 @@ To run the Nweighted function some steps are requiered.
 
 1. The included summary statistics needs to be formatted with the following columns in the exact same order:
    SNPID,CHR,BP,EA,OA,EAF,N,Z,PVAL
-   
+ ```  
    SNPID = RS number
    CHR = chromosome
    BP = base pair
@@ -37,7 +37,7 @@ To run the Nweighted function some steps are requiered.
    N = sample size
    Z = z-score
    P = p-value
-   
+```   
    Thus, the included files needs exactly 9 columns
 
 2. Make an empty list according to the number of input files:
