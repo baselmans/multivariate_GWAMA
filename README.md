@@ -78,7 +78,7 @@ T4	 0.0236	 0.1605	 0.3474	 1
  ```
     h2list <- c(0.0498, 0.0441, 0.0708, 0.0294)
  ```   
-* Note, The CTI values and the SNP heritabilies needs to be in the exact same order as you list the GWAS summary statistics.
+* Note, The CTI values and the SNP heritabilities needs to be in the exact same order as you list the GWAS summary statistics.
 
 # Run the Nweighted function
 ```  
