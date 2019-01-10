@@ -1,4 +1,4 @@
-# multivariate_GWAMA
+# Nweighed GWAMA
 
 Nweighted GWAMA is a R based software function that performs a multivariate GWAMA of genetically correlated traits while correcting for sample overlap. The details of the method is described in Baselmans et al. (Nature Genetics) http://dx.doi.org/10.1038/s41588-018-0320-8
 
