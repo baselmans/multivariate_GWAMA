@@ -61,7 +61,7 @@ To run the Nweighted function some steps are requiered.
    
    A CTI matrix could look like:
 ```  	
-      T1	    T2     T3    T4
+     T1	    T2     T3    T4
 T1	 1	      0.1282	 0.0126	 0.0236
 T2	 0.1282	 1	      0.2189	 0.1605
 T3	 0.0126	 0.2189	 1	      0.3474
