@@ -84,7 +84,7 @@ T4	 0.0236	 0.1605	 0.3474	 1
 ```  
   multivariate_GWAMA(x=dat,cov_Z=CTI,h2=h2list,out=".",name="your_name",output_gz=F,check_rows=F)
 ```  
-  The function provides a log file including all the different steps (e.g. aligning) and possible errors. 
+  The function provides a log file including all the different steps performed by the function (e.g. aligning) and possible errors (see   file in the Downloads folder. 
 
 
    
