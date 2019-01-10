@@ -41,14 +41,18 @@ To run the Nweighted function some steps are requiered.
    Thus, the included files needs exactly 9 columns
 
 2. Make an empty list according to the number of input files:
-   For instance: dat<-vector("list",4)
-   
+   For instance: 
+```   
+   dat<-vector("list",4)
+```   
    Read in the data:
+```   
    dat[[1]]<-fread("path_to_files",showProgress=F,data.table=F)
    dat[[2]]<-fread("path_to_files",showProgress=F,data.table=F)
    dat[[3]]<-fread("path_to_files",showProgress=F,data.table=F)
    dat[[4]]<-fread("path_to_files",showProgress=F,data.table=F)
-   
+```
+
 3. To correct for the sample overlap a matrix including the cross trait intercepts (CTI), gained from LD Score Regression (Bulik-          Sullivan, Nature Genetics 2015) is requierd.
    
    These Crostrait intercepts can be found in the log files provided by LD Score Regression (genetic correlation)
