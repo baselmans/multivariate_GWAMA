@@ -19,7 +19,7 @@ With this package installed, you should be all set to install and use the Nweigh
 
 # How to run tests
 
-A couple of data examples can be found in the Downloads directory. The sample size for these test datasets is 100,000
+A couple of data examples can be found in the Downloads directory. The number of SNPs for these test datasets is 100,000
 
 # Using the Nweighted software function
 
