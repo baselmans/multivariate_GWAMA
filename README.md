@@ -1,6 +1,6 @@
 # Nweighed GWAMA
 
-Nweighted GWAMA is a R based software function that performs a multivariate GWAMA of genetically correlated traits while correcting for sample overlap. The details of the method is described in Baselmans et al. (Nature Genetics) http://dx.doi.org/10.1038/s41588-018-0320-8
+Nweighted GWAMA is a R based function that performs a multivariate GWAMA of genetically correlated traits while correcting for sample overlap. The details of the method is described in Baselmans et al. (Nature Genetics) http://dx.doi.org/10.1038/s41588-018-0320-8
 
 * The current version is 1_2_3
 
@@ -21,7 +21,7 @@ With this package installed, you should be all set to install and use the Nweigh
 
 A couple of data examples can be found in the Downloads directory. The number of SNPs for these test datasets is 100,000
 
-# Using the Nweighted software function
+# Using the Nweighted function
 
 To run the Nweighted function some steps are requiered. 
 
