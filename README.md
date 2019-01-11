@@ -1,4 +1,4 @@
-# Nweighed GWAMA
+# Nweighted GWAMA
 
 Nweighted GWAMA is a R function that performs a multivariate GWAMA of genetically correlated traits while correcting for sample overlap. The details of the method is described in Baselmans et al. (Nature Genetics) http://dx.doi.org/10.1038/s41588-018-0320-8
 
@@ -85,6 +85,12 @@ T4	 0.0236	 0.1605	 0.3474	 1
   multivariate_GWAMA(x=dat,cov_Z=CTI,h2=h2list,out=".",name="your_name",output_gz=F,check_rows=F)
 ```  
   The function provides a log file which lists all the different steps performed by the function (e.g. aligning) and possible errors (see   file in the Downloads folder). 
+
+# Model Averaging GWAMA
+
+Model averaging GWAMA is R code that performs a multivariate GWAMA of genetically correlated traits while correcting for sample overlap. The details of the method is described in Baselmans et al. (Nature Genetics) http://dx.doi.org/10.1038/s41588-018-0320-8
+
+Note: LD Score Regression has the assumption that the included test statistics follow a standard normal distribution under the null hypothesis of no effect. In MA GWAMA we can't guarantee that this assumption will be met. Interpreting results from LD Score regression should be done with some reservation.
 
 
    
