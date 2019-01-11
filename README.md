@@ -90,7 +90,7 @@ T4	 0.0236	 0.1605	 0.3474	 1
 
 Model averaging GWAMA is R code that performs a multivariate GWAMA of genetically correlated traits while correcting for sample overlap. The details of the method is described in Baselmans et al. (Nature Genetics) http://dx.doi.org/10.1038/s41588-018-0320-8
 
-Note: LD Score Regression has the assumption that the included test statistics follow a standard normal distribution under the null hypothesis of no effect. In MA GWAMA we can't guarantee that this assumption will be met. Interpreting results from LD Score regression should be done with some reservation. 
+Note: LD Score Regression has the assumption that the included test statistics follow a standard normal distribution under the null hypothesis of no effect. In MA GWAMA we can't guarantee that this assumption will be met. Interpreting results from LD Score regression should be done with some reservation. (Automated function will follow as soon a possible)
 
 # Getting Started
 
@@ -117,11 +117,40 @@ Or alternatively, you can download the function in the folder "Downloads" and lo
 
   A couple of examples can be found in the "downloads" directory. The number of SNPs for which we provide summary statistics in these     test datasets is 1000 (due to more computational power requiered for MA GWAMA, the number of SNPs in the test dataset are limited to     1000)
   
-# Using MA GWAMA
+#  Using MA GWAMA
 
-  To run the Nweighted function The following files, agruments and data points are required:  
+   To run the Nweighted function The following files, agruments and data points are required:  
 
+   1. The included summary statistics needs to be formatted with the following columns in the exact order:
+   SNPID,CHR,BP,EA,OA,EAF,N,Z,PVAL
+ ```  
+   cptid = cptid (chromosome:basepare)
+   RS = RS number 
+   CHR = chromosome
+   BP = base pair
+   A1 = effect allele
+   A2 = other allele
+   EAF = frequency effect allele
+   N = sample size
+   Z = z-score
+   PVAL = p-value
+   Beta = regression coefficient
+   SE = standard error
+```
+   2. Reading the data
+```   
+   T1<-fread("path_to_files",showProgress=F,data.table=F)
+   T2<-fread("path_to_files",showProgress=F,data.table=F)
+   T3<-fread("path_to_files",showProgress=F,data.table=F)
+   T4<-fread("path_to_files",showProgress=F,data.table=F)
+```   
    
-   
-   
-   
+   3. select right columns (rs, beta, se)
+
+```
+   T1_b1_se1 <- T1[c(2,11:12)]
+   T2_b2_se2 <- T2[c(2,11:12)]
+   T3_b3_se3 <- T3[c(2,11:12)]
+   T4_b4_se4 <- T4[c(2,11:12)]
+```
+
