@@ -144,7 +144,8 @@ Or alternatively, you can download the function in the folder "Downloads" and lo
    T3<-fread("path_to_files",showProgress=F,data.table=F)
    T4<-fread("path_to_files",showProgress=F,data.table=F)
 ```   
-   
+ # Reformatting the files
+ 
    3. select right columns (rs, beta, se)
 
 ```
@@ -153,4 +154,32 @@ Or alternatively, you can download the function in the folder "Downloads" and lo
    T3_b3_se3 <- T3[c(2,11:12)]
    T4_b4_se4 <- T4[c(2,11:12)]
 ```
+
+   4. Merge data
+```
+   M1 <- merge(T1_b1_se1,T2_b2_se2,by=1)
+   M1 <- merge(M1,T3_b3_se3,by=1)
+   M1 <- merge(M1,T4_b4_se4,by=1)
+```   
+   Omit missing data
+```
+    M1 <- na.omit(M1)
+```
+```
+   A1 <- merge(T1,M1, by="SNPID")
+   A1 <- A1[row.names(unique(A1["SNPID"])),]
+
+   B <- M1[,c(2,4,6,8)]
+   SE <- M1[,c(3,5,7,9)]
+```
+
+   5. Read in the Cross Trait Intercept to correct for sample overlap (see Nweighted GWAMA)
+```   
+   cov_Z <- read.table("your_CTI.txt", header =T, sep = " ")
+   cov_Z <- as.matrix(cov_Z) 
+```
+# Running MA GWAMA
+
+
+
 
