@@ -92,6 +92,13 @@ Model averaging GWAMA is R code that performs a multivariate GWAMA of geneticall
 
 Note: LD Score Regression has the assumption that the included test statistics follow a standard normal distribution under the null hypothesis of no effect. In MA GWAMA we can't guarantee that this assumption will be met. Interpreting results from LD Score regression should be done with some reservation. 
 
+# Getting Started
+
+You can source the function in R using the following  line of code:
+```source(XXX)```
+ 
+Or alternatively, you can download the function in the folder "Downloads" and load it into R yourself.
+
 # Requirements
 
   MA GWAMA currently requiers seven R packages to be installed. These are 
@@ -104,9 +111,15 @@ Note: LD Score Regression has the assumption that the included test statistics f
   AICcmodavg (https://cran.r-project.org/web/packages/AICcmodavg/index.html)
   metafor (https://cran.r-project.org/web/packages/metafor/index.html)
 ```  
+ With these packages in place, you should be all set to install and use MA GWAMA
+ 
+# How to test the function before deployment
 
+  A couple of examples can be found in the "downloads" directory. The number of SNPs for which we provide summary statistics in these     test datasets is 1000 (due to more computational power the number of SNPs in the test dataset are limited to 1000)
+  
+# Using the Nweighted function
 
-   
+  To run the Nweighted function The following files, agruments and data points are required:  
 
    
    
