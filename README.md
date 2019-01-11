@@ -94,16 +94,16 @@ Note: LD Score Regression has the assumption that the included test statistics f
 
 # Requirements
 
-  MA GWAMA currently requiers seven R packages to be installed. These are sp, raster, RccpArmadillo, unmarked, VGAM, AICmodavg and         metafor
-  
-  library(sp)
-library(raster)
-library(RcppArmadillo)
-library(unmarked)
-library(VGAM)
-library(AICcmodavg)
-library(metafor)
-
+  MA GWAMA currently requiers seven R packages to be installed. These are 
+```  
+  sp (https://cran.r-project.org/web/packages/sp/index.html)
+  rater (https://cran.r-project.org/web/packages/raster/index.html)
+  RcppArmadillo (https://cran.r-project.org/web/packages/RcppArmadillo/index.html)
+  unmarked (https://cran.r-project.org/web/packages/unmarked/index.html)
+  VGAM (https://cran.r-project.org/web/packages/VGAM/index.html)
+  AICcmodavg (https://cran.r-project.org/web/packages/AICcmodavg/index.html)
+  metafor (https://cran.r-project.org/web/packages/metafor/index.html)
+```  
 
 
    
