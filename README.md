@@ -13,7 +13,7 @@ Or alternatively, you can download the function in the folder "Downloads" and lo
 
 # Requirements
 
-The Nweighted GWAMA function relies on the package ```data.table``` (https://cran.r-project.org/web/packages/data.table/index.html)  
+To read in the GWAS summary data you might want to use the package ```data.table``` (https://cran.r-project.org/web/packages/data.table/index.html)  
 
 With this package installed, you should be all set to install and use the Nweighted GWAMA function.
 
@@ -90,7 +90,20 @@ T4	 0.0236	 0.1605	 0.3474	 1
 
 Model averaging GWAMA is R code that performs a multivariate GWAMA of genetically correlated traits while correcting for sample overlap. The details of the method is described in Baselmans et al. (Nature Genetics) http://dx.doi.org/10.1038/s41588-018-0320-8
 
-Note: LD Score Regression has the assumption that the included test statistics follow a standard normal distribution under the null hypothesis of no effect. In MA GWAMA we can't guarantee that this assumption will be met. Interpreting results from LD Score regression should be done with some reservation.
+Note: LD Score Regression has the assumption that the included test statistics follow a standard normal distribution under the null hypothesis of no effect. In MA GWAMA we can't guarantee that this assumption will be met. Interpreting results from LD Score regression should be done with some reservation. 
+
+# Requirements
+
+  MA GWAMA currently requiers seven R packages to be installed. These are sp, raster, RccpArmadillo, unmarked, VGAM, AICmodavg and         metafor
+  
+  library(sp)
+library(raster)
+library(RcppArmadillo)
+library(unmarked)
+library(VGAM)
+library(AICcmodavg)
+library(metafor)
+
 
 
    
