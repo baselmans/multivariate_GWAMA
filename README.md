@@ -115,9 +115,9 @@ Or alternatively, you can download the function in the folder "Downloads" and lo
  
 # How to test the function before deployment
 
-  A couple of examples can be found in the "downloads" directory. The number of SNPs for which we provide summary statistics in these     test datasets is 1000 (due to more computational power the number of SNPs in the test dataset are limited to 1000)
+  A couple of examples can be found in the "downloads" directory. The number of SNPs for which we provide summary statistics in these     test datasets is 1000 (due to more computational power requiered for MA GWAMA, the number of SNPs in the test dataset are limited to     1000)
   
-# Using the Nweighted function
+# Using MA GWAMA
 
   To run the Nweighted function The following files, agruments and data points are required:  
 
