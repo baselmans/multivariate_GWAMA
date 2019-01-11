@@ -6,7 +6,7 @@ Nweighted GWAMA is a R function that performs a multivariate GWAMA of geneticall
 
 # Getting Started
 
-You can source the function i R using the follwojg  line of code:
+You can source the function in R using the following  line of code:
 ```source("https://github.com/baselmans/multivariate_GWAMA/blob/master/Downloads/N_weighted_GWAMA.function.1_2_3.R?raw=TRUE")```
  
 Or alternatively, you can download the function in the folder "Downloads" and load it into R yourself.
