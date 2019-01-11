@@ -224,8 +224,7 @@ Or alternatively, you can download the function in the folder "Downloads" and lo
   est2 <- matrix(unlist(XX[1,1]),4,1)
   est3 <- matrix(unlist(XX[1,2:8]),4,7)
   
-  est<- cbind(est2,est3)
-  
+  est<- cbind(est2,est3)  
   
   se2 <- matrix(unlist(XX[2,1]),4,1)
   se3 <- matrix(unlist(XX[2,2:8]),4,7)
@@ -244,6 +243,17 @@ Or alternatively, you can download the function in the folder "Downloads" and lo
 
 ```
 
+# Generate Output
 
+```
+Output <- cbind(A1[,c(1,2,3,4,5,6)],output_SNP,pchisq((output_SNP[,1]/output_SNP[,2])^2,1,lower=F),
+                pchisq((output_SNP[,3]/output_SNP[,4])^2,1,lower=F),pchisq((output_SNP[,5]/output_SNP[,6])^2,
+                1,lower=F),pchisq((output_SNP[,7]/output_SNP[,8])^2,1,lower=F))
+
+names(Output) <- c("RS","cptid","CHR","BP","A1","A2","Beta_LS","SE_LS","Beta_PA","SE_PA","Beta_NEU","SE_NEU","Beta_DEP","SE_DEP","P_LS","P_PA","P_NEU","P_DEP")
+
+write.table("AVGWAS.txt" ,quote=F,row.names=F,col.names=T)
+
+```
 
 
