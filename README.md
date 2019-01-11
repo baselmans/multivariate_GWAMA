@@ -178,7 +178,71 @@ Or alternatively, you can download the function in the folder "Downloads" and lo
    cov_Z <- read.table("your_CTI.txt", header =T, sep = " ")
    cov_Z <- as.matrix(cov_Z) 
 ```
-# Running MA GWAMA
+   Now your files are formatted in the right way and MA GWAMA could be run.
+   
+   # Running MA GWAMA
+```
+  The following for loop will perform the MA GWAMA analysis
+   
+   for(i in 1:nrow(B)){
+  
+  V <- diag(SE[i,]) %*% cov_Z %*% diag(SE[i,])
+  
+  
+  yi <- as.numeric(B[i,])
+  
+  
+  grid <- expand.grid(c(0,1),c(0,1),c(0,1),c(0,1))
+  
+  grid <- t(grid)
+  
+  #h2 = vector sqrt(h2)
+  h2 <- as.vector(c(sqrt(0.0498),sqrt(0.0441), sqrt(0.0748), sqrt(0.0305)))
+  m31 <- rma.mv(yi~0+h2, V=V,  method="ML")
+  
+  # 2 effects
+  m32 <- rma.mv(yi~0+h2 + I(grid[,2]*h2), V=V, method="ML")
+  m33 <- rma.mv(yi~0+h2 + I(grid[,3]*h2), V=V, method="ML")
+  m34 <- rma.mv(yi~0+h2 + I(grid[,4]*h2), V=V, method="ML")
+  m35 <- rma.mv(yi~0+h2 + I(grid[,5]*h2), V=V, method="ML")
+  m36 <- rma.mv(yi~0+h2 + I(grid[,6]*h2), V=V, method="ML")
+  m37 <- rma.mv(yi~0+h2 + I(grid[,7]*h2), V=V, method="ML")
+  m38 <- rma.mv(yi~0+h2 + I(grid[,8]*h2), V=V, method="ML")
+  
+  
+  
+  Mods <- list(m31,m32,m33,m34,m35,m36,m37,m38)
+  
+  K <- c(rep(1,1),rep(2,7))
+  
+  LL <- lapply(Mods,logLik)
+  LL <- unlist(LL)
+  aictabCustom(LL,K,nobs=4)
+  
+  XX <- sapply(Mods,predict)
+  
+  est2 <- matrix(unlist(XX[1,1]),4,1)
+  est3 <- matrix(unlist(XX[1,2:8]),4,7)
+  
+  est<- cbind(est2,est3)
+  
+  
+  se2 <- matrix(unlist(XX[2,1]),4,1)
+  se3 <- matrix(unlist(XX[2,2:8]),4,7)
+  
+  se<- cbind(se2,se3)
+  
+  y1 <- modavgCustom(LL,K,nobs=4, estimate=est[1,] ,se=se[1,],second.ord = T)
+  y2 <- modavgCustom(LL,K,nobs=4, estimate=est[2,] ,se=se[2,],second.ord = T)
+  y3 <- modavgCustom(LL,K,nobs=4, estimate=est[3,] ,se=se[3,],second.ord = T)
+  y4 <- modavgCustom(LL,K,nobs=4, estimate=est[4,] ,se=se[4,],second.ord = T)
+  
+  output_SNP[i, ] <- c(y1$Mod.avg.est,y1$Uncond.SE,y2$Mod.avg.est,y2$Uncond.SE,y3$Mod.avg.est,y3$Uncond.SE,y4$Mod.avg.est,y4$Uncond.SE)
+  
+  
+}   
+
+```
 
 
 
