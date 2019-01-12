@@ -151,7 +151,25 @@ T2<-fread("https://github.com/baselmans/multivariate_GWAMA/blob/master/Test_Data
 T3<-fread("https://github.com/baselmans/multivariate_GWAMA/blob/master/Test_Data/NEU_1K_no23andMe.txt?raw=TRUE",showProgress=F,data.table=F)
 T4<-fread("https://github.com/baselmans/multivariate_GWAMA/blob/master/Test_Data/DEP_1K_no23andMe.txt?raw=TRUE",showProgress=F,data.table=F)
 ```   
- # Reformatting the files
+
+# If necessary, compute beta'sand standard errors
+
+beta
+```
+T1$b1 <- T1$z/sqrt(T1$n*2*T1$eaf*(1-T1$eaf))
+T2$b2 <- T2$z/sqrt(T2$n*2*T2$eaf*(1-T2$eaf))
+T3$b3 <- T3$z/sqrt(T3$n*2*T3$eaf*(1-T3$eaf))
+T4$b4 <- T4$z/sqrt(T4$n*2*T4$eaf*(1-T4$eaf))
+```
+standard error
+```
+T1$se1 <- ((1/sqrt(T1$n)) * (1/sqrt(2*(T1$eaf*(1-T1$eaf)))))
+T2$se2 <- ((1/sqrt(T2$n)) * (1/sqrt(2*(T2$eaf*(1-T2$eaf)))))
+T3$se3 <- ((1/sqrt(T3$n)) * (1/sqrt(2*(T3$eaf*(1-T3$eaf)))))
+T4$se4 <- ((1/sqrt(T4$n)) * (1/sqrt(2*(T4$eaf*(1-T4$eaf)))))
+```
+
+# Reformatting the files
  
    3. select right columns (rs, beta, se)
 
@@ -173,8 +191,8 @@ T4<-fread("https://github.com/baselmans/multivariate_GWAMA/blob/master/Test_Data
     M1 <- na.omit(M1)
 ```
 ```
-   A1 <- merge(T1,M1, by="SNPID")
-   A1 <- A1[row.names(unique(A1["SNPID"])),]
+   A1 <- merge(T1,M1, by="rs")
+   A1 <- A1[row.names(unique(A1["rs"])),]
 
    B <- M1[,c(2,4,6,8)]
    SE <- M1[,c(3,5,7,9)]
@@ -182,9 +200,14 @@ T4<-fread("https://github.com/baselmans/multivariate_GWAMA/blob/master/Test_Data
 
    5. Read in the Cross Trait Intercept to correct for sample overlap (see Nweighted GWAMA)
 ```   
-   cov_Z <- read.table("your_CTI.txt", header =T, sep = " ")
-   cov_Z <- as.matrix(cov_Z) 
+cov_Z <- fread("https://github.com/baselmans/multivariate_GWAMA/blob/master/Test_Data/cross_trait_intercept?raw=TRUE",showProgress=F,data.table=F)
+cov_Z <- as.matrix(cov_Z)
 ```
+# heritabilitie estimates
+#h2 = vector sqrt(h2)
+h2 <- as.vector(c(sqrt(0.0498),sqrt(0.0441), sqrt(0.0748), sqrt(0.0305)))```
+
+
    Now your files are formatted in the right way and MA GWAMA could be run.
    
    # Running MA GWAMA
