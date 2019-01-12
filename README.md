@@ -9,7 +9,7 @@ Nweighted GWAMA is a R function that performs a multivariate GWAMA of geneticall
 You can source the function in R using the following  line of code:
 ```source("https://github.com/baselmans/multivariate_GWAMA/blob/master/Test_Data/N_weighted_GWAMA.function.1_2_3.R?raw=TRUE")```
  
-Or alternatively, you can download the function in the folder "Downloads" and load it into R yourself.
+Or alternatively, you can download the function in the folder "Test_Data" and load it into R yourself.
 
 # Requirements
 
@@ -19,7 +19,7 @@ With this package installed, you should be all set to install and use the Nweigh
 
 # How to test the function before deployment
 
-A couple of examples can be found in the "downloads" directory. The number of SNPs for which we provide summary statistics in these test datasets is 100,000
+A couple of examples can be found in the "Test_Data" directory. The number of SNPs for which we provide summary statistics in these test datasets is 100,000
 
 You can download a test script in the Test_Data folder called: example_script.R
 
@@ -57,7 +57,7 @@ dat[[4]]<-fread("https://github.com/baselmans/multivariate_GWAMA/blob/master/Tes
 
 ```
 
-3. To correct for sample overlap you need a matrix of cross trait intercepts (CTI), which you can get from from LD Score Regression (Bulik-Sullivan, Nature Genetics 2015).
+3. To correct for sample overlap you need a matrix of cross trait intercepts (CTI), which you can get from from LD Score Regression        (Bulik-Sullivan, Nature Genetics 2015).
    
    These Crosstrait intercepts can be found in the log files provided by LD Score Regression (genetic correlation)
    The output looks something like:
@@ -92,20 +92,18 @@ CTI <- as.matrix(read.table("https://github.com/baselmans/multivariate_GWAMA/blo
 ```  
   multivariate_GWAMA(x=dat,cov_Z=CTI,h2=h2list,out=".",name="NGWAMA_test",output_gz=F,check_rows=F)
 ```  
-  The function provides a log file which lists all the different steps performed by the function (e.g. aligning) and possible errors (see   file in the Downloads folder). 
-
+  The function provides a log file which lists all the different steps performed by the function (e.g. aligning) and possible errors. 
+  
 # Model Averaging GWAMA
 
-Model averaging GWAMA is R code that performs a multivariate GWAMA of genetically correlated traits while correcting for sample overlap. The details of the method is described in Baselmans et al. (Nature Genetics) http://dx.doi.org/10.1038/s41588-018-0320-8
+  Model averaging GWAMA is R code that performs a multivariate GWAMA of genetically correlated traits while correcting for sample         overlap. The details of the method is described in Baselmans et al. (Nature Genetics) http://dx.doi.org/10.1038/s41588-018-0320-8
 
-Note: LD Score Regression has the assumption that the included test statistics follow a standard normal distribution under the null hypothesis of no effect. In MA GWAMA we can't guarantee that this assumption will be met. Interpreting results from LD Score regression should be done with some reservation. (Automated function will follow as soon a possible)
+  Note: LD Score Regression has the assumption that the included test statistics follow a standard normal distribution under the null     hypothesis of no effect. In MA GWAMA we can't guarantee that this assumption will be met. Interpreting results from LD Score             regression should be done with some reservation. (Automated function will follow as soon a possible)
 
 # Getting Started
 
-You can source the function in R using the following  line of code:
-```source(XXX)```
- 
-Or alternatively, you can download the function in the folder "Downloads" and load it into R yourself.
+  You can use MA GWAMA using the following R code (A function to source will follow as soon as possible). 
+  In the Test_Data folder you can download an example R script called: test_MA_GWAMA.R
 
 # Requirements
 
@@ -119,18 +117,19 @@ Or alternatively, you can download the function in the folder "Downloads" and lo
   AICcmodavg (https://cran.r-project.org/web/packages/AICcmodavg/index.html)
   metafor (https://cran.r-project.org/web/packages/metafor/index.html)
 ```  
- With these packages in place, you should be all set to install and use MA GWAMA
+  With these packages in place, you should be all set to install and use MA GWAMA
  
 # How to test the function before deployment
 
-  A couple of examples can be found in the "downloads" directory. The number of SNPs for which we provide summary statistics in these     test datasets is 1000 (due to more computational power requiered for MA GWAMA, the number of SNPs in the test dataset are limited to     1000)
+  A couple of examples can be found in the "Test_Data" directory. The number of SNPs for which we provide summary statistics in these     test datasets is 1000 (due to more computational power requiered for MA GWAMA, the number of SNPs in the test dataset are limited to     1000)
   
 #  Using MA GWAMA
 
-   To run the Nweighted function The following files, agruments and data points are required:  
+   To run MA GWAMA the GWAS summary statistics need the following format:  
 
    1. The included summary statistics needs to be formatted with the following columns in the exact order:
-   SNPID,CHR,BP,EA,OA,EAF,N,Z,PVAL
+   cptid,rs,chr,bp,a1,a2,eaf,n,z,p,beta,se
+
  ```  
    cptid = cptid (chromosome:basepare)
    RS = RS number 
@@ -147,10 +146,10 @@ Or alternatively, you can download the function in the folder "Downloads" and lo
 ```
    2. Reading the data
 ```   
-   T1<-fread("path_to_files",showProgress=F,data.table=F)
-   T2<-fread("path_to_files",showProgress=F,data.table=F)
-   T3<-fread("path_to_files",showProgress=F,data.table=F)
-   T4<-fread("path_to_files",showProgress=F,data.table=F)
+T1<-fread("https://github.com/baselmans/multivariate_GWAMA/blob/master/Test_Data/LS_1K_no23andMe.txt?raw=TRUE",showProgress=F,data.table=F)
+T2<-fread("https://github.com/baselmans/multivariate_GWAMA/blob/master/Test_Data/PA_1K_no23andMe.txt?raw=TRUE",showProgress=F,data.table=F)
+T3<-fread("https://github.com/baselmans/multivariate_GWAMA/blob/master/Test_Data/NEU_1K_no23andMe.txt?raw=TRUE",showProgress=F,data.table=F)
+T4<-fread("https://github.com/baselmans/multivariate_GWAMA/blob/master/Test_Data/DEP_1K_no23andMe.txt?raw=TRUE",showProgress=F,data.table=F)
 ```   
  # Reformatting the files
  
