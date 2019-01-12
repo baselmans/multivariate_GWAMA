@@ -21,6 +21,8 @@ With this package installed, you should be all set to install and use the Nweigh
 
 A couple of examples can be found in the "downloads" directory. The number of SNPs for which we provide summary statistics in these test datasets is 100,000
 
+You can download a test script in the Test_Data folder called: example_script.R
+
 # Using the Nweighted function
 
 To run the Nweighted function The following files, agruments and data points are required:
