@@ -10,10 +10,10 @@ dat<-vector("list",4) ## change "4" according to the number of input files
 
 ## read in data
 ## columns must have this order: "SNPID","CHR","BP","EA","OA","EAF","N","Z","PVAL"
-dat[[1]]<-fread("https://github.com/baselmans/multivariate_GWAMA/blob/master/Test_Data/LS_100K_no23andMe.txt",showProgress=F,data.table=F)
-dat[[2]]<-fread("https://github.com/baselmans/multivariate_GWAMA/blob/master/Test_Data/PA_100K_no23andMe.txt",showProgress=F,data.table=F)
-dat[[3]]<-fread("https://github.com/baselmans/multivariate_GWAMA/blob/master/Test_Data/NEU_100K_no23andMe.txt",showProgress=F,data.table=F)
-dat[[4]]<-fread("https://github.com/baselmans/multivariate_GWAMA/blob/master/Test_Data/DEP_100K_no23andMe.txt",showProgress=F,data.table=F)
+dat[[1]]<-fread("https://github.com/baselmans/multivariate_GWAMA/blob/master/Test_Data/LS_100K_no23andMe.txt?raw=TRUE",showProgress=F,data.table=F)
+dat[[2]]<-fread("https://github.com/baselmans/multivariate_GWAMA/blob/master/Test_Data/PA_100K_no23andMe.txt?raw=TRUE",showProgress=F,data.table=F)
+dat[[3]]<-fread("https://github.com/baselmans/multivariate_GWAMA/blob/master/Test_Data/NEU_100K_no23andMe.txt?raw=TRUE",showProgress=F,data.table=F)
+dat[[4]]<-fread("https://github.com/baselmans/multivariate_GWAMA/blob/master/Test_Data/DEP_100K_no23andMe.txt?raw=TRUE",showProgress=F,data.table=F)
 
 #Provide SNP heritabilities
 h2list <- c(0.0498, 0.0441, 0.0708, 0.0294)
