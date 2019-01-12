@@ -87,7 +87,7 @@ CTI <- as.matrix(read.table("https://github.com/baselmans/multivariate_GWAMA/blo
 
 # Run the Nweighted function
 ```  
-  multivariate_GWAMA(x=dat,cov_Z=CTI,h2=h2list,out=".",name="your_name",output_gz=F,check_rows=F)
+  multivariate_GWAMA(x=dat,cov_Z=CTI,h2=h2list,out=".",name="NGWAMA_test",output_gz=F,check_rows=F)
 ```  
   The function provides a log file which lists all the different steps performed by the function (e.g. aligning) and possible errors (see   file in the Downloads folder). 
 
