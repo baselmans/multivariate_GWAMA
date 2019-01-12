@@ -152,7 +152,7 @@ T3<-fread("https://github.com/baselmans/multivariate_GWAMA/blob/master/Test_Data
 T4<-fread("https://github.com/baselmans/multivariate_GWAMA/blob/master/Test_Data/DEP_1K_no23andMe.txt?raw=TRUE",showProgress=F,data.table=F)
 ```   
 
-# If necessary, compute beta'sand standard errors
+# If necessary, compute beta's and standard errors
 
 beta
 ```
