@@ -7,7 +7,7 @@ Nweighted GWAMA is a R function that performs a multivariate GWAMA of geneticall
 # Getting Started
 
 You can source the function in R using the following  line of code:
-```source("https://github.com/baselmans/multivariate_GWAMA/blob/master/Downloads/N_weighted_GWAMA.function.1_2_3.R?raw=TRUE")```
+```source("https://github.com/baselmans/multivariate_GWAMA/blob/master/Test_Data/N_weighted_GWAMA.function.1_2_3.R?raw=TRUE")```
  
 Or alternatively, you can download the function in the folder "Downloads" and load it into R yourself.
 
@@ -47,10 +47,11 @@ To run the Nweighted function The following files, agruments and data points are
 ```   
    Read in the data:
 ```   
-   dat[[1]]<-fread("path_to_files",showProgress=F,data.table=F)
-   dat[[2]]<-fread("path_to_files",showProgress=F,data.table=F)
-   dat[[3]]<-fread("path_to_files",showProgress=F,data.table=F)
-   dat[[4]]<-fread("path_to_files",showProgress=F,data.table=F)
+dat[[1]]<-fread("https://github.com/baselmans/multivariate_GWAMA/blob/master/Test_Data/LS_100K_no23andMe.txt",showProgress=F,data.table=F)
+dat[[2]]<-fread("https://github.com/baselmans/multivariate_GWAMA/blob/master/Test_Data/PA_100K_no23andMe.txt",showProgress=F,data.table=F)
+dat[[3]]<-fread("https://github.com/baselmans/multivariate_GWAMA/blob/master/Test_Data/NEU_100K_no23andMe.txt",showProgress=F,data.table=F)
+dat[[4]]<-fread("https://github.com/baselmans/multivariate_GWAMA/blob/master/Test_Data/DEP_100K_no23andMe.txt",showProgress=F,data.table=F)
+
 ```
 
 3. To correct for sample overlap you need a matrix of cross trait intercepts (CTI), which you can get from from LD Score Regression (Bulik-Sullivan, Nature Genetics 2015).
@@ -73,6 +74,10 @@ T2	 0.1282	 1       0.2189	 0.1605
 T3	 0.0126	 0.2189	 1	 0.3474
 T4	 0.0236	 0.1605	 0.3474	 1
 ```
+```
+CTI <- as.matrix(read.table("https://github.com/baselmans/multivariate_GWAMA/blob/master/Test_Data/cross_trait_intercept", header =T, row.names = 1))
+```
+
 4.  You need a vector of the SNP heritabilities of the included traits
     For instance: 
  ```
