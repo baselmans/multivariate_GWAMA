@@ -78,7 +78,7 @@ T3	 0.0126	 0.2189	 1	 0.3474
 T4	 0.0236	 0.1605	 0.3474	 1
 ```
 ```
-CTI <- as.matrix(read.table("https://github.com/baselmans/multivariate_GWAMA/blob/master/Test_Data/cross_trait_intercept", header =T, row.names = 1))
+CTI <- as.matrix(read.table("https://github.com/baselmans/multivariate_GWAMA/blob/master/Test_Data/cross_trait_intercept.txt?raw=TRUE", header =T))
 ```
 
 4.  You need a vector of the SNP heritabilities of the included traits
@@ -200,15 +200,15 @@ T4$se4 <- ((1/sqrt(T4$n)) * (1/sqrt(2*(T4$eaf*(1-T4$eaf)))))
 
    5. Read in the Cross Trait Intercept to correct for sample overlap (see Nweighted GWAMA)
 ```   
-cov_Z <- fread("https://github.com/baselmans/multivariate_GWAMA/blob/master/Test_Data/cross_trait_intercept?raw=TRUE",showProgress=F,data.table=F)
-cov_Z <- as.matrix(cov_Z)
+cov_Z <- as.matrix(read.table("https://github.com/baselmans/multivariate_GWAMA/blob/master/Test_Data/cross_trait_intercept.txt?raw=TRUE", header =T))
+
 ```
 # heritabilitie estimates
 #h2 = vector sqrt(h2)
 h2 <- as.vector(c(sqrt(0.0498),sqrt(0.0441), sqrt(0.0748), sqrt(0.0305)))```
 
 
-   Now your files are formatted in the right way and MA GWAMA could be run.
+  Now your files are formatted in the right way and MA GWAMA could be run.
    
    # Running MA GWAMA
 ```
@@ -226,8 +226,6 @@ h2 <- as.vector(c(sqrt(0.0498),sqrt(0.0441), sqrt(0.0748), sqrt(0.0305)))```
   
   grid <- t(grid)
   
-  #h2 = vector sqrt(h2)
-  h2 <- as.vector(c(sqrt(0.0498),sqrt(0.0441), sqrt(0.0748), sqrt(0.0305)))
   m31 <- rma.mv(yi~0+h2, V=V,  method="ML")
   
   # 2 effects
