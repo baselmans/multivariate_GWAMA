@@ -204,8 +204,11 @@ cov_Z <- as.matrix(read.table("https://github.com/baselmans/multivariate_GWAMA/b
 
 ```
 # heritabilitie estimates
-#h2 = vector sqrt(h2)
-h2 <- as.vector(c(sqrt(0.0498),sqrt(0.0441), sqrt(0.0748), sqrt(0.0305)))```
+h2 = vector sqrt(h2)
+
+```
+h2 <- as.vector(c(sqrt(0.0498),sqrt(0.0441), sqrt(0.0748), sqrt(0.0305)))
+```
 
 
   Now your files are formatted in the right way and MA GWAMA could be run.
