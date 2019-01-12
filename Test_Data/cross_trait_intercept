@@ -1,0 +1,5 @@
+666_LS_multi_bbaselm 777_HAP_multi_bbaselm 888_NEU_multi_bbaselm 999_DEP_multi_bbaselm
+666_LS_multi_bbaselm 0.9382 0.1282 0.0111 0.0236
+777_HAP_multi_bbaselm 0.1282 1.0031 0.2274 0.1605
+888_NEU_multi_bbaselm 0.0111 0.2274 1.0062 0.347
+999_DEP_multi_bbaselm 0.0236 0.1605 0.347 0.9958
