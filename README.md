@@ -203,7 +203,7 @@ T4$se4 <- ((1/sqrt(T4$n)) * (1/sqrt(2*(T4$eaf*(1-T4$eaf)))))
 cov_Z <- as.matrix(read.table("https://github.com/baselmans/multivariate_GWAMA/blob/master/Test_Data/cross_trait_intercept.txt?raw=TRUE", header =T))
 
 ```
-# heritabilitie estimates
+# heritability estimates
 h2 = vector sqrt(h2)
 
 ```
