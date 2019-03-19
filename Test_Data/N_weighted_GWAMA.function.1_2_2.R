@@ -419,7 +419,7 @@ multivariate_GWAMA<-function(	x,cov_Z=NULL,h2,
 			}
 			allele_mismatch_snps<-allele_mismatch_snps[,-1]
 			for(i in 1:ncol(allele_mismatch_snps)){
-				allele_mismatch_snps[,i]<-sort(allele_msimatch_snps[,i],na.last=T)
+				allele_mismatch_snps[,i]<-sort(allele_mismatch_snps[,i],na.last=T)
 			}
 			allele_mismatch_snps[is.na(allele_mismatch_snps)]<-""
 			write_output(allele_mismatch_snps[,-1],out,"not_aligned.txt",output_gz,F)
