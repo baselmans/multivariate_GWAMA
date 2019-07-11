@@ -1,7 +1,7 @@
 ##########################################################################
 ##																		##
 ##			R function to run a multivariate N-weighted-GWAMA			##
-##			Version 1.2.5 (last modified on 29-MAY-2019)				##
+##			Version 1.2.6 (last modified on 11-JUL-2019)				##
 ##			Created by Hill Ip & Bart Baselmans							##
 ##																		##
 ##########################################################################
@@ -73,7 +73,7 @@ multivariate_GWAMA<-function(	x,cov_Z=NULL,h2,
 	sink(log.file,,"output",T)
 	sink(log.file,T,"message")
 
-	ver<-"1.2.5"
+	ver<-"1.2.6"
 	begin.time<-Sys.time()
 
 	cat("-----\n\nR-function (v",ver,") for performing an N-weighted GWAMA over a set of genetically correlated traits\nFor detailed information, see: Baselmans et al. (2019). Multivariate genome-wide analyses of the well-being spectrum\n\n-----\n\nAnalysis started at ",format(begin.time,trim="%y-%b-%d %X",usetz=T),"\n",sep="")
@@ -495,7 +495,7 @@ multivariate_GWAMA<-function(	x,cov_Z=NULL,h2,
 	}
 	
 	
-	if(method=='union' & type=="demontis"){
+	if(sum(c(method=='union',type=="demontis"),na.rm=T)==2){
 		cat("WARNING: method=\"union\" makes no sense with type=\"demontis\"\n  method was changed to \"intersection\"\n")
 		method<-'intersection'
 	}
@@ -559,7 +559,7 @@ multivariate_GWAMA<-function(	x,cov_Z=NULL,h2,
 					stop(paste0(names(demontis_objects)[i]," out of bounds (range: ",min(demontis_objects[[i]])," - ",max(demontis_objects[[i]]),")"),call.=F)
 				}
 			}
-			cat("  Sanity checks completed\n  Adjusting the sample sizes and Z-scores...")
+			cat("\n  Sanity checks completed\n  Adjusting the sample sizes and Z-scores...")
 			N<-sum(n_cases,n_controls)
 			p_cases<-n_cases/N
 			dich<-all_aligned[[1]]
